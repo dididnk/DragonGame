@@ -1,0 +1,32 @@
+body {
+    font-family: "Myriad Pro", Helvetica, sans-serif;
+    font-size: 12px;
+    background: url("mariage.png") fixed;
+}
+
+#a {
+    margin-top: 10;
+    font-size: 12px;
+    color: rgb(255, 46, 9);
+}
+
+a:hover {
+    color: rgb(255, 230, 9);
+}
+
+h1 {
+    color: rgb(255, 46, 9);
+    font-size: 35px;
+}
+
+h2 {
+    margin-left: 15px;
+    color: rgb(255, 230, 9);
+    font-size: 20px;
+}
+
+p {
+    padding-left: 15px;
+    font-size: 20px;
+    color: rgb(255, 46, 9);
+}

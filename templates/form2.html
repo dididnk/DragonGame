@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>TP Flask+SQL</title>
+    <link href="{{ url_for('static', filename='style1.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="page">
+        <h1>Nom des Dragons</h2>
+            <form action="{{url_for('dragon_saisi')}}">
+                <!--traitement est ici le nom de la méthode Python qui sera appelé lors de la validation du formulaire. 
+                Une route doit être associée-->
+                <p>Entrer le nom d'un dragon</p>
+                <!--required son importance ici c'est de dire à l'utilisateur qu'il doit saisir au moins une chose
+				pattern a  pour importance de specifier ce qu'il faut saisir [a-z] un mot composé des lettre de l'alphabet
+				+ : signifie ici que l'utilisateur devra saisi soit une lettre soit un mot -->
+                <input type="text" name="input_dragon" placeholder="*Saisez un nom ex: Monde*" required pattern="[A-z]{1,}" title="Toujours commencer par une lettre majuscule ex : Jesus" id="input_dragon" />
+                <input type="submit" value="valider" id="valider" />
+                <div>
+                    <input type="checkbox" name="pretendant" value="on">
+                    <label><b>le prétendant</b></label>
+                </div>
+                <div>
+                    <input type="checkbox" name="regime" value="on">
+                    <label><b>le régime alimentaire</b></label>
+                </div>
+            </form>
+            <!--hasError est une methode qui vont nous permettre de les exploiter dans Flask-->
+            <a href="{{url_for( 'dragon_liste')}} "> </br>Voir la liste</br>
+            </a>
+            <a href="{{url_for( 'home_jeux')}} ">Teste d'amour</br></a> {%if hasError %}
+            <h4><strong><font color="red"> {{hasError}} </font></strong></h4>
+            {%endif%}
+    </div>
+</body>
+
+</html>

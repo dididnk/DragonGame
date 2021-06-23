@@ -1,0 +1,40 @@
+body {
+    font-family: "Myriad Pro", Helvetica, sans-serif;
+    font-size: 12px;
+    background: url("ub.png") fixed;
+}
+
+#page {
+    margin-left: 30%;
+}
+
+.formulaire {
+    margin: auto;
+}
+
+#a {
+    margin-top: 10;
+    font-size: 12px;
+}
+
+a:hover {
+    color: rgb(255, 46, 9);
+}
+
+h1 {
+    padding-left: 20px;
+    color: rgb(27, 138, 230);
+    font-size: 30px;
+}
+
+h2 {
+    padding-left: 20px;
+    color: rgba(102, 69, 8, 0.637);
+    font-size: 30px;
+}
+
+p {
+    padding-left: 15px;
+    color: rgb(31, 24, 24);
+    font-size: 20px;
+}

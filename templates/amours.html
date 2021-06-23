@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>TP Flask+SQL</title>
+    <link href="{{ url_for('static', filename='style2.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="page">
+        <h1>Nom des Dragons</h2>
+            <form action="{{url_for('dragon_selection')}}">
+                <!--miseracles est ici le nom de la méthode Python qui sera appelé lors de la validation du formulaire. 
+            		Une route doit être associée-->
+                <h2>Selectionner le nom d'un dragon aimant</h2>
+                <select name="input_aimant" div class="selection">
+                    {% for item in liste_DAimant %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+                <h2>Selectionner le nom d'un dragon aimé</h2>
+                <select name="input_aime" div class="selection">
+                    {% for item in liste_DAime %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select> {%if hasErrorlove %}
+                <p><strong>
+                        <font color="red"> {{hasErrorlove}} </font>
+                    </strong></p> {%endif%}
+                <input type="submit" value="Tester l'Amour" id="valider" />
+            </form>
+            <!--hasError est une methode qui vont nous permettre de les exploiter dans Flask-->
+            <a href="{{url_for('dragon_saisi')}}"> </br>retour au menu</a> {%if hasError %}
+            <p><strong><font color="red "> {{hasError}} </font></strong></p> {%endif%}
+    </div>
+</body>
+
+</html>
